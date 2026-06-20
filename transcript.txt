@@ -1,0 +1,72 @@
+# Project Transcript
+
+## Approach
+
+This solution processes insurance-style claims using a modular pipeline.
+
+### Step 1: Claim Parsing
+The claim text is analyzed to extract:
+- Issue type
+- Object part
+- Claim summary
+
+Implemented in:
+- claim_parser.py
+
+### Step 2: Image Analysis
+Images are analyzed to determine:
+- Object type
+- Damaged part
+- Damage type
+- Severity
+- Whether visible damage exists
+
+Implemented in:
+- image_analyzer.py
+
+### Step 3: Risk Assessment
+User risk indicators are checked.
+
+Implemented in:
+- risk_engine.py
+
+### Step 4: Evidence Validation
+Claim information is compared with image evidence.
+
+Implemented in:
+- evidence_checker.py
+
+### Step 5: Decision Engine
+The final claim decision is generated.
+
+Possible outcomes:
+- supported
+- contradicted
+- not_enough_information
+
+Implemented in:
+- decision_engine.py
+
+### Step 6: Output Generation
+All processed claims are written to output.csv.
+
+---
+
+## Challenges Faced
+
+1. Gemini API quota limits caused failures during batch processing.
+2. Multiple claims contained long conversational text.
+3. Some claims referenced multiple damaged parts.
+4. Image evidence and claim descriptions required consistency checks.
+
+---
+
+## Final Solution
+
+A rule-based fallback implementation was used to ensure:
+- Stable execution
+- No API quota dependency
+- Complete output generation
+- Reproducible results
+
+The system successfully processes all claims and generates the required output.csv file.
