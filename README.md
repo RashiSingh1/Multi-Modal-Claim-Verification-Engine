@@ -71,12 +71,6 @@ Built for automated damage-claim verification across:
 - Electronics (laptops, devices)
 - Shipped packages
 
-## Future Improvements
-
-- Replace the rule-based decision layer with a trained classification model
-- Add a lightweight API/UI layer for live claim submission and review
-- Expand evaluation coverage with a larger, labeled claim dataset
-
 ## Author
 
 **Rashi Kumari**
